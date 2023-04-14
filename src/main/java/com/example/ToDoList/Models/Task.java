@@ -16,7 +16,7 @@ public class Task {
     private String name;
     private String description;
     private Date dateTime;
-    private boolean isDone;
+    private Boolean isDone;
 
     //USER
     @ManyToOne
@@ -27,4 +27,19 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public void updateTask(Task task){
+        if (task.name != null) {
+            this.name = task.name;
+        }
+        if (task.description != null) {
+            this.description = task.description;
+        }
+        if (task.dateTime != null) {
+            this.dateTime = task.dateTime;
+        }
+        if (task.isDone != null) {
+            this.isDone = task.isDone;
+        }
+    }
 }

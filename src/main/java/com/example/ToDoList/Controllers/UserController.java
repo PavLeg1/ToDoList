@@ -31,29 +31,28 @@ public class UserController {
         userService.deleteUserById(id);
     }
 
-    @GetMapping("/{id")
-    public ResponseEntity<?> getById(@PathVariable Integer id){
-        try {
-            User user = userService.getUserById(id);
-            return new ResponseEntity<User>(user, HttpStatus.OK);
-        }
-        catch (NoSuchElementException e){
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody User user, @PathVariable Integer id){
-        try{
-            User _user = userService.getUserById(id);
-            _user.updateUser(user);
-            userService.saveUser(_user);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        catch (NoSuchElementException e){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
+//    @GetMapping("/{id")
+//    public ResponseEntity<?> getById(@PathVariable Integer id){
+//        try {
+//            User user = userService.getUserById(id);
+//            return new ResponseEntity<User>(user, HttpStatus.OK);
+//        }
+//        catch (NoSuchElementException e){
+//            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @PutMapping("/{id}")
+//    public ResponseEntity<?> update(@RequestBody User user, @PathVariable Integer id){
+//        try{
+//            User _user = userService.getUserById(id);
+//            _user.updateUser(user);
+//            userService.saveUser(_user);
+//            return new ResponseEntity<>(HttpStatus.OK);
+//        }
+//        catch (NoSuchElementException e){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 }

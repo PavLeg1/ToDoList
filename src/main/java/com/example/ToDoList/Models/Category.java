@@ -12,4 +12,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    public void updateCategory(Category category){
+        if (category.name != null) {
+            this.name = category.name;
+        }
+    }
 }

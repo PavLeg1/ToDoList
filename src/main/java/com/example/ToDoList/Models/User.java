@@ -3,6 +3,8 @@ package com.example.ToDoList.Models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Date;
+
 @Entity
 @Table(name="users")
 @Data
@@ -13,7 +15,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String middleName;
-    private String birthDate;
+    private Date birthDate;
     private String login;
 
     public void updateUser(User user){
